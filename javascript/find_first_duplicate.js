@@ -1,5 +1,15 @@
 function findFirstDuplicate(arr) {
-  // type your code here
+  let arrSet = new Set;
+  
+  for (let i in arr){
+    if (arrSet.has(arr[i])){
+      return arr[i]
+    }
+    arrSet.add(arr[i])
+
+  }
+
+  return -1;
 }
 
 if (require.main === module) {
@@ -15,5 +25,9 @@ if (require.main === module) {
 
 module.exports = findFirstDuplicate;
 
-// Please add your pseudocode to this file
-// And a written explanation of your solution
+
+//This code will go through an array and return the first duplicate of a number. 
+//if there is no duplicate, this code will return 1
+
+// put array into ascending order so that nums can easily be compared by sort method
+// 
